@@ -38,7 +38,7 @@ def train(lr, model_name ,num_classes, drop_rate, pretrained, lr_backbone, lr_he
 
     checkpoint_callback = ModelCheckpoint(
         dirpath="model_checkpoints/corrupted_mnist/",
-        filename=file_name,
+        filename=file_name + '-{epoch:02d}-{val_accuracy:.2f}',
         save_top_k=1,
         verbose=True,
         monitor="val_accuracy",
